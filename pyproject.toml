@@ -1,0 +1,23 @@
+[build-system]
+build-backend = 'mesonpy'
+requires = ['meson-python', 'numpy', 'pandas', 'requests']
+
+[project]
+name = 'pygtide'
+dynamic = ['version']
+packages=['pygtide', 'etpred']
+# package-data={'pygtide': ['commdat/*']}
+dependencies = [
+  'numpy',
+  'pandas',
+  'requests',
+]
+description = 'A Python module and wrapper for ETERNA PREDICT to compute gravitational tides on Earth'
+readme = 'README.md'
+requires-python = '>=3.12'
+license = {file = 'LICENSE'}
+authors = [
+  {name = 'Gabriel C. Rau', email = 'gabriel@hydrogeo.science'},
+  {name = 'Tom Eulenfeld'}
+]
+url='https://github.com/hydrogeoscience/pygtide'
