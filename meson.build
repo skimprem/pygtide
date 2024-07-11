@@ -69,6 +69,6 @@ py.install_sources(
 
 install_subdir(
     'pygtide' / 'commdat',
-    install_dir: py.get_install_dir() / 'pygtide' / 'commdat',
+    install_dir: py.get_install_dir() / 'pygtide',
     strip_directory : false
 )

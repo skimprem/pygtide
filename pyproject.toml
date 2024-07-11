@@ -1,6 +1,6 @@
 [build-system]
 build-backend = 'mesonpy'
-requires = ['meson-python', 'numpy', 'pandas', 'requests']
+requires = ['meson-python', 'numpy', 'pandas', 'requests', 'setuptools']
 
 [project]
 name = 'pygtide'

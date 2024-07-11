@@ -110,6 +110,7 @@ class pygtide(object):
         self.msg = msg
         self.fortran_version = etpred.inout.vers.astype(str)
         self.data_dir = resource_filename('pygtide', 'commdat/')
+        # self.data_dir = os.path.join('.', 'commdat/')
         etpred.params.comdir = self.data_dir + ' ' * (256 - len(self.data_dir))
         # set OS dependent module output
         etpred.params.nullfile = os.devnull + ' ' * (10 - len(os.devnull))
