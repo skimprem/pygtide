@@ -26,7 +26,19 @@ Instructions:
      ```
      pip install pygtide
      ```
-   
+     **NOTE by Roman Sermiagin (2024-07-11)**: Since `distutils` was removed in
+     *NumPy >= 1.26, the Meson build system was used. I could not create a
+     *correct `meson.build` script for the assembly, after which the
+     *Fortran-modules would be added to the `etpred` module. Therefore, to
+     *install a package via Mason, you must first compile the `etpred` module in
+     *the build directory, and then install the package. This only works
+     *correctly with numpy 1.2.x, not 2.0.x
+
+     ```
+     python -m numpy.f2py -c -m etpred src/etpred.f90 --build-dir build
+     pip instal pygtide
+     ```
+     
   * *Windows*:<br />
        Download the correct wheel for your Python version (available for 3.8 to 3.11) from the subfolder "windows" onto your system.
 	   Then navigate your Anaconda explorer to the download location and execute:
