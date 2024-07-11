@@ -27,12 +27,14 @@ Instructions:
      pip install pygtide
      ```
      **NOTE by Roman Sermiagin (2024-07-11)**: Since `distutils` was removed in
-     *NumPy >= 1.26, the Meson build system was used. I could not create a
-     *correct `meson.build` script for the assembly, after which the
-     *Fortran-modules would be added to the `etpred` module. Therefore, to
-     *install a package via Mason, you must first compile the `etpred` module in
-     *the build directory, and then install the package. This only works
-     *correctly with numpy 1.2.x, not 2.0.x
+     NumPy >= 1.26, the Meson build system was used. I could not create a
+     correct `meson.build` script for the assembly, after which the
+     Fortran-modules would be added to the `etpred` module. Therefore, to
+     install a package via Mason, you must first compile the `etpred` module in
+     the build directory, and then install the package. This only works
+     correctly with numpy 1.2.x, not 2.0.x.
+     The previous `setup.py` and `setup.cfg` settings files have been moved
+     to the `backup` directory. `pyproject.toml` was added instead of `setup.py`
 
      ```
      python -m numpy.f2py -c -m etpred src/etpred.f90 --build-dir build
