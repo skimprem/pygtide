@@ -48,3 +48,27 @@ py.extension_module('etpred',
     dependencies: py_dep,
     install: true
 )
+
+# Add Python source files
+python_sources = files(
+    'pygtide/__init__.py',
+    'pygtide/core.py',
+    'pygtide/tests.py',
+    'pygtide/update_etpred_data.py',
+)
+
+# Install Python sources
+py.install_sources(
+    'pygtide/__init__.py',
+    'pygtide/core.py',
+    'pygtide/tests.py',
+    'pygtide/update_etpred_data.py',
+    # 'pygtide/commdat/',
+    subdir: 'pygtide'
+)
+
+install_subdir(
+    'pygtide' / 'commdat',
+    install_dir: py.get_install_dir() / 'pygtide' / 'commdat',
+    strip_directory : false
+)
