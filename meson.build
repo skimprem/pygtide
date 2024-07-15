@@ -34,6 +34,16 @@ inc_np = include_directories(incdir_numpy, incdir_f2py)
 #     command: [py, '-m', 'numpy.f2py', '@INPUT@', '-m', 'etpred', '--lower']
 # )
 
+etpred_build = run_command(
+    'python',
+    '-m', 'numpy.f2py',
+    '-c',
+    '-m', 'etpred',
+    'src/etpred.f90',
+    '--build-dir', 'build',
+    check: true
+).stdout().strip()
+
 # Define Python extension module
 py.extension_module('etpred',
     [
