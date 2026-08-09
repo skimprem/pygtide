@@ -12,7 +12,7 @@ dependencies = [
 ]
 description = 'A Python module and wrapper for ETERNA PREDICT to compute gravitational tides on Earth'
 readme = 'README.md'
-requires-python = '>=3.12'
+requires-python = '>=3.11'
 license = {file = 'LICENSE'}
 authors = [
   {name = 'Gabriel C. Rau', email = 'gabriel@hydrogeo.science'},
